@@ -1,0 +1,50 @@
+[
+  {
+    "key": "alt+c",
+    "when": "terminalFocus",
+    "command": "workbench.action.terminal.copyLastCommandOutput"
+  },
+  {
+    "key": "alt+v",
+    "when": "terminalFocus",
+    "command": "workbench.action.terminal.copyLastCommandAndLastCommandOutput"
+  },
+  {
+    "key": "ctrl+alt+c",
+    "when": "terminalFocus",
+    "command": "repeat-commands.runSequence",
+    "args": {
+      "preCommands": [
+        "workbench.action.terminal.scrollToBottom",
+        "workbench.action.terminal.clearSelection"
+      ],
+      "commands": [
+        "workbench.action.terminal.selectToPreviousCommand"
+      ],
+      "repeat": 1,
+      "postCommands": [
+        "workbench.action.terminal.copySelection"
+      ]
+    }
+  },
+  {
+    "key": "ctrl+alt+y",
+    "when": "terminalFocus",
+    "command": "repeat-commands.runSequence",
+    "args": {
+      "preCommands": [
+        "workbench.action.terminal.scrollToBottom",
+        "workbench.action.terminal.clearSelection"
+      ],
+      "commands": [
+        "workbench.action.terminal.selectToPreviousCommand",
+        "workbench.action.terminal.selectToPreviousLine",
+        "workbench.action.terminal.selectToPreviousLine"
+      ],
+      "repeat": "${getRepeatInput}",
+      "postCommands": [
+        "workbench.action.terminal.copySelection"
+      ]
+    }
+  }
+]
