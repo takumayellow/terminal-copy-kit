@@ -9,5 +9,6 @@
     "workbench.action.terminal.selectToPreviousLine",
     "workbench.action.terminal.copySelection",
     "repeat-commands.runSequence"
-  ]
+  ],
+  "window.enableMenuBarMnemonics": false
 }
