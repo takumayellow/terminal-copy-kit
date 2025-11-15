@@ -10,5 +10,6 @@
     "workbench.action.terminal.copySelection",
     "repeat-commands.runSequence"
   ],
-  "window.enableMenuBarMnemonics": false
+  "window.enableMenuBarMnemonics": false,
+  "window.customMenuBarAltFocus": false
 }

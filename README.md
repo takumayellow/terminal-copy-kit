@@ -5,7 +5,7 @@
 ## 構成ファイル
 
 - `.vscode/keybindings.json` — ターミナル上で `Alt+C` などのショートカットを割り当て。
-- `.vscode/settings.json` — ショートカットがシェルに届かないようにするための端末設定。
+- `.vscode/settings.json` — ショートカットがシェルに届かないようにするための端末設定。 Altキーでメニューバーにフォーカスしないよう `window.customMenuBarAltFocus` も false にしています。
 - `.vscode/extensions.json` — 必須拡張機能（ArturoDent.repeat-commands）のインストール推奨。
 - `scripts/setup.ps1` — Windows/PowerShell で拡張機能を自動インストールする補助スクリプト。
 
@@ -30,7 +30,7 @@
 
 - `Alt+C` / `Alt+V` は VS Code 標準コマンドをそのまま利用しています。
 - `Ctrl+Alt+C` と `Ctrl+Alt+Y` は `repeat-commands` 拡張機能で一連の選択・コピー操作を自動化しています。
-- `.vscode/settings.json` でこれらのコマンドがシェルに送られないようにブロックしています。
+- `.vscode/settings.json` でこれらのコマンドがシェルに送られないようにブロックしています。 Altキーでメニューバーにフォーカスしないよう `window.customMenuBarAltFocus` も false にしています。
 
 ## GitHub への公開手順（手動）
 
@@ -56,4 +56,6 @@ git push -u origin main
 
 ## English Summary
 
-A tiny VS Code workspace that wires shortcuts (`Alt+C`, `Alt+V`, `Ctrl+Alt+C`, `Ctrl+Alt+Y`) to copy the previous terminal command output. Install the `ArturoDent.repeat-commands` extension, open the folder in VS Code, run commands, and trigger the shortcuts to grab the output. Use `scripts/setup.ps1` if you want to automate the extension installation.
+A tiny VS Code workspace that wires shortcuts (`Alt+C`, `Alt+V`, `Ctrl+Alt+C`, `Ctrl+Alt+Y`) to copy the previous terminal command output. Install the `ArturoDent.repeat-commands` extension, open the folder in VS Code, run commands, and trigger the shortcuts to grab the output. Use `scripts/setup.ps1` if you want to automate the extension installation. Starting with VS Code 1.94+, `window.customMenuBarAltFocus` also has to be disabled so Windows no longer steals `Alt` keystrokes from these shortcuts, and the workspace settings do that automatically.
+
+
